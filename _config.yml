@@ -1,6 +1,6 @@
 title: Basit Balogun
 description: Software engineer learning hardware in public — chip design, verification, and firmware.
-url: "https://basitbalogun.me"
+url: "https://basitbalogun.dev"
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
 
