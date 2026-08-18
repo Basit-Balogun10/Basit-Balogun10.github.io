@@ -111,8 +111,8 @@
 
   p { font-size: 15px; color: var(--text); margin: 18px 0; }
 
-  a { color: var(--text); text-decoration-color: var(--text-dimmer); text-underline-offset: 3px; }
-  a:hover { text-decoration-color: var(--text); }
+  a { color: var(--text-dim); text-decoration-color: var(--text-dimmer); text-underline-offset: 3px; }
+  a:hover { color: var(--text); text-decoration-color: var(--text); }
 
   .meta {
     font-size: 11px;
@@ -166,7 +166,7 @@
   details.resume-toggle summary {
     cursor: pointer;
     list-style: none;
-    color: var(--text);
+    color: var(--text-dim);
     text-decoration: underline;
     text-decoration-color: var(--text-dimmer);
     text-underline-offset: 3px;
@@ -174,7 +174,17 @@
     user-select: none;
   }
   details.resume-toggle summary::-webkit-details-marker { display: none; }
-  details.resume-toggle summary:hover { text-decoration-color: var(--text); }
+  details.resume-toggle summary:hover { color: var(--text); text-decoration-color: var(--text); }
+
+  /* Chevron instead of the -> other nav links use -- this doesn't
+     navigate anywhere, it expands content on the same page, so it
+     shouldn't look like the same affordance. Rotates on open instead
+     of just appearing/disappearing. */
+  details.resume-toggle summary .chevron {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+  details.resume-toggle[open] summary .chevron { transform: rotate(90deg); }
 
   /* Re-triggers each time <details> opens -- a display:none -> visible
      transition restarts a statically-applied CSS animation, no JS
@@ -209,6 +219,7 @@
     max-width: 700px;
     margin: 0 auto;
     padding: 0 20px 60px 20px;
+    text-align: center;
     font-size: 11px;
     color: var(--text-dimmer);
   }

@@ -10,16 +10,16 @@ Software engineer, making myself a noob again on purpose — chip design, verifi
 <div class="social-links">
   <a href="mailto:basitbalogun10@gmail.com">Email</a>
   <a href="https://github.com/Basit-Balogun10">GitHub</a>
-  <a href="https://linkedin.com/in/basit-balogun">LinkedIn</a>
-  <a href="https://x.com/Basit_Balogun10">X</a>
   <a href="https://www.twitch.tv/basitbalogun10">Twitch</a>
   <a href="https://www.youtube.com/@basitbalogun10">YouTube</a>
+  <a href="https://linkedin.com/in/basit-balogun">LinkedIn</a>
+  <a href="https://x.com/Basit_Balogun10">X</a>
 </div>
 
-I basically stream that process and the things I'm building live, and whenever something's actually finished it turns into a [write-up](/blog/) (and hopefully a [walkthrough on YouTube](https://www.youtube.com/@basitbalogun10) as well). [Here's what I'm actually building →](/roadmap/)
+I basically stream that process and the things I'm building live, and whenever something's actually finished it turns into a [write-up](/blog/) (and hopefully a walkthrough on YouTube as well). [Here's what I'm actually building →](/roadmap/)
 
 <details class="resume-toggle">
-<summary>Here's some highlights about myself →</summary>
+<summary>Here's some highlights about myself <span class="chevron">›</span></summary>
 <div class="resume-content" markdown="1">
 
 ## Professional experience

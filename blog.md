@@ -15,5 +15,5 @@ Write-ups whenever something's actually finished — what I built, what broke, w
 </div>
 {% endfor %}
 {% else %}
-<p class="empty-note">Nothing here yet, first post shows up whenever I actually finish something from <a href="/roadmap/">this list</a>. Come watch the mess happen live (on <a href="https://www.twitch.tv/basitbalogun10">Twitch</a>.. and <a href="https://www.youtube.com/@basitbalogun10">YT</a>) in the meantime.</p>
+<p class="empty-note">Nothing here yet, first post shows up whenever I actually finish something from <a href="/roadmap/">this list</a>. Come watch the mess happen live (on <a href="https://www.twitch.tv/basitbalogun10">Twitch</a>... and <a href="https://www.youtube.com/@basitbalogun10">YT</a>) in the meantime.</p>
 {% endif %}
