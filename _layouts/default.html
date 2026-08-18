@@ -42,20 +42,32 @@
      viewport-relative percentages, so the glow reliably reaches the
      centered content column regardless of screen width. background-
      attachment:fixed keeps it from scrolling with the page. */
+  /* Registering these lets the browser actually interpolate them --
+     a plain custom property swapped between two values would just
+     snap, since the browser has no idea it's a percentage. This is
+     what makes each gradient's own center point genuinely drift,
+     instead of the old approach of panning the whole composited
+     image via background-position (which moved everything together,
+     uniformly, and needed an oversized background-size to have
+     anywhere to pan into). Falls back to the static initial-value
+     positions on browsers without @property support -- no animation,
+     not broken. */
+  @property --gx1 { syntax: '<percentage>'; inherits: false; initial-value: 50%; }
+  @property --gy1 { syntax: '<percentage>'; inherits: false; initial-value: -10%; }
+  @property --gx2 { syntax: '<percentage>'; inherits: false; initial-value: 15%; }
+  @property --gy2 { syntax: '<percentage>'; inherits: false; initial-value: 60%; }
+  @property --gx3 { syntax: '<percentage>'; inherits: false; initial-value: 85%; }
+  @property --gy3 { syntax: '<percentage>'; inherits: false; initial-value: 90%; }
+
   html, body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
     background:
-      radial-gradient(ellipse 1000px 600px at 50% -10%, rgba(255,255,255,0.42), transparent 70%),
-      radial-gradient(ellipse 700px 550px at 15% 60%, rgba(255,255,255,0.28), transparent 70%),
-      radial-gradient(ellipse 700px 550px at 85% 90%, rgba(255,255,255,0.28), transparent 70%),
+      radial-gradient(ellipse 1000px 600px at var(--gx1) var(--gy1), rgba(255,255,255,0.42), transparent 70%),
+      radial-gradient(ellipse 700px 550px at var(--gx2) var(--gy2), rgba(255,255,255,0.28), transparent 70%),
+      radial-gradient(ellipse 700px 550px at var(--gx3) var(--gy3), rgba(255,255,255,0.28), transparent 70%),
       #0a0a0a;
-    /* Larger than the viewport so background-position has room to
-       actually pan -- without this, the gradients already cover
-       100% of the element and shifting position has nothing visible
-       to do. */
-    background-size: 145% 145%;
     background-attachment: fixed;
     animation: drift 24s ease-in-out infinite alternate;
     color: var(--text);
@@ -158,8 +170,8 @@
   }
 
   @keyframes drift {
-    from { background-position: 0% 0%; }
-    to { background-position: 20% 14%; }
+    from { --gx1: 50%; --gy1: -10%; --gx2: 15%; --gy2: 60%; --gx3: 85%; --gy3: 90%; }
+    to   { --gx1: 68%; --gy1: 8%;   --gx2: 28%; --gy2: 42%; --gx3: 65%; --gy3: 72%; }
   }
 
   @keyframes kenburns {
@@ -323,15 +335,25 @@
   #display-toggle:hover { color: var(--text-dim); text-decoration-color: var(--text-dim); }
 
   #display-panel {
-    display: none;
     position: absolute;
     bottom: 100%;
     right: 0;
     margin-bottom: 8px;
     padding: 12px 14px;
     min-width: 190px;
+    opacity: 0;
+    transform: translateY(6px);
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
   }
-  #display-panel.open { display: block; }
+  #display-panel.open {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
   #display-panel label {
     display: flex;
     align-items: center;
@@ -343,8 +365,38 @@
     white-space: nowrap;
   }
   #display-panel input[type="checkbox"] {
-    accent-color: var(--text-dim);
+    appearance: none;
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--glass);
     cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  #display-panel input[type="checkbox"]:hover { border-color: rgba(255,255,255,0.28); }
+  #display-panel input[type="checkbox"]:checked {
+    background: var(--text-dim);
+    border-color: var(--text-dim);
+  }
+  #display-panel input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border: solid var(--bg);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  #display-panel input[type="checkbox"]:disabled {
+    cursor: default;
+    opacity: 0.35;
   }
   #display-panel label.disabled { color: var(--text-dimmer); cursor: default; }
   #display-panel label.disabled input { cursor: default; }
@@ -384,7 +436,7 @@
 </main>
 
 <div id="display-settings">
-  <button id="display-toggle" type="button">Display</button>
+  <button id="display-toggle" type="button">Customize display</button>
   <div id="display-panel" class="glass">
     <label id="motion-label"><input type="checkbox" id="reduce-motion-check"> Reduce motion</label>
     <label id="photo-label"><input type="checkbox" id="bg-photo-check"> Background photo <span id="photo-size"></span></label>
