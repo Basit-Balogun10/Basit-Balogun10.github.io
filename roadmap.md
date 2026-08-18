@@ -25,4 +25,4 @@ And for each core, it's not really one hardware branch, it's two: an ASIC path (
 
 UART. Register bank, baud generator, shift registers, FSMs, synchronizers, FIFOs, all wired together. First one on the list, so also kind of the first time actually doing any of this for real lol.
 
-Live builds happen on stream, finished stuff turns into a [write-up](/blog/) eventually (and maybe a walkthrough video on YouTube as well), and if you're wondering why any of this exists at all, that's the [about page](/about/).
+Live builds happen on [stream](https://www.twitch.tv/basitbalogun10), finished stuff turns into a [write-up](/blog/) eventually (and maybe a [walkthrough video on YouTube](https://www.youtube.com/@basitbalogun10) as well), and if you're wondering why any of this exists at all, that's the [about page](/about/).

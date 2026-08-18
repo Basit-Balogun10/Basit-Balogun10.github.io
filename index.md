@@ -5,9 +5,19 @@ permalink: /
 
 # Basit Balogun
 
-Software engineer, currently making myself a beginner again on purpose — chip design, verification, firmware, learned live. [Why I'm doing this →](/about/)
+Software engineer, currently making myself a beginner again on purpose — chip design, verification, firmware, learned live on stream. [Why I'm doing this →](/about/)
 
-Lagos, Nigeria · [basitbalogun10@gmail.com](mailto:basitbalogun10@gmail.com) · [github.com/Basit-Balogun10](https://github.com/Basit-Balogun10) · [linkedin.com/in/basit-balogun](https://linkedin.com/in/basit-balogun)
+<div class="social-links">
+  <a href="mailto:basitbalogun10@gmail.com">Email</a>
+  <a href="https://github.com/Basit-Balogun10">GitHub</a>
+  <a href="https://linkedin.com/in/basit-balogun">LinkedIn</a>
+  <a href="https://x.com/Basit_Balogun10">X</a>
+  <a href="https://www.twitch.tv/basitbalogun10">Twitch</a>
+  <a href="https://www.youtube.com/@basitbalogun10">YouTube</a>
+</div>
+
+<details class="resume-toggle" markdown="1">
+<summary>Here's a bit about my work so far →</summary>
 
 ## Technical skills
 
@@ -105,6 +115,8 @@ Lagos, Nigeria · [basitbalogun10@gmail.com](mailto:basitbalogun10@gmail.com) ·
 **Bachelor of Engineering, Electrical and Electronics Engineering**
 University of Lagos · 2021 – 2026
 
+</details>
+
 ---
 
-Streaming the actual building as it happens. Whenever something's actually finished it turns into a [write-up](/blog/), eventually. [What I'm actually building →](/roadmap/)
+Streaming the actual building as it happens. Whenever something's actually finished it turns into a [write-up](/blog/) (and hopefully a [walkthrough on YouTube](https://www.youtube.com/@basitbalogun10)). [What I'm actually building →](/roadmap/)
