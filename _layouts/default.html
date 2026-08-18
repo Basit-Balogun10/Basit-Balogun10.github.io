@@ -25,34 +25,27 @@
 
   * { box-sizing: border-box; }
 
+  /* Gradients are layered directly on body's own background (not a
+     separate ::before with z-index) -- that avoids any stacking-context
+     ambiguity, since body itself isn't positioned and z-index on an
+     unpositioned ancestor's pseudo-element is exactly the kind of thing
+     that silently does nothing in some browsers. Fixed pixel sizes, not
+     viewport-relative percentages, so the glow reliably reaches the
+     centered content column regardless of screen width. background-
+     attachment:fixed keeps it from scrolling with the page. */
   html, body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: #0a0a0a;
+    background:
+      radial-gradient(ellipse 900px 500px at 50% -10%, rgba(255,255,255,0.14), transparent 70%),
+      radial-gradient(ellipse 600px 500px at 15% 60%, rgba(255,255,255,0.09), transparent 70%),
+      radial-gradient(ellipse 600px 500px at 85% 90%, rgba(255,255,255,0.09), transparent 70%),
+      #0a0a0a;
+    background-attachment: fixed;
     color: var(--text);
     font-family: 'Ubuntu Mono', 'Cascadia Mono', 'SF Mono', Consolas, Menlo, monospace;
     line-height: 1.7;
-  }
-
-  /* Fixed so it doesn't scroll away -- gives the .glass panels'
-     backdrop-filter something real to blur against, so the glass
-     effect reads for every visitor, not just ones with their own
-     OS-level window transparency turned on (that's a separate,
-     per-user thing this page has no control over either way). */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    /* Fixed pixel sizes, not viewport-relative -- percentage-based
-       radial-gradient positions/sizes fade out long before reaching
-       the centered content column on a wide screen, which is why
-       this looked completely flat before. */
-    background:
-      radial-gradient(ellipse 900px 500px at 50% -10%, rgba(255,255,255,0.11), transparent 70%),
-      radial-gradient(ellipse 600px 500px at 15% 60%, rgba(255,255,255,0.07), transparent 70%),
-      radial-gradient(ellipse 600px 500px at 85% 90%, rgba(255,255,255,0.07), transparent 70%);
   }
 
   .glass {
@@ -83,7 +76,7 @@
   nav a {
     color: var(--text-dim);
     text-decoration: none;
-    padding: 6px 10px;
+    padding: 6px 18px;
     border-radius: 8px;
   }
   nav a:hover { color: var(--text); background: var(--glass-strong); }
