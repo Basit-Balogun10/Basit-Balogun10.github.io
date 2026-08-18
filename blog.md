@@ -5,7 +5,7 @@ permalink: /blog/
 
 # Blog
 
-Write-ups whenever something's actually finished — what I built, what broke, what I got wrong along the way.
+Write-ups whenever something's actually finished - what I built, what broke, what I got wrong along the way.
 
 {% if site.posts.size > 0 %}
 {% for post in site.posts %}
