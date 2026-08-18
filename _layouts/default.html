@@ -109,11 +109,11 @@
   body.bg-photo .bg-photo-layer { display: block; }
   body.bg-photo { animation: none; }
 
-  /* Ambient grain + breathing glow + floating motes -- ported from the
-     stream overlay scenes for a matching atmosphere. Left out the
-     scenes' diagonal light sweep on purpose: it reads as a stream
-     "flash" transition, not something a static page should be doing
-     on a loop. All three are fixed (don't scroll with the page) and
+  /* Ambient grain + breathing glow -- ported from the stream overlay
+     scenes for a matching atmosphere. Left out the scenes' floating
+     motes and diagonal light sweep on purpose: both read as stream
+     transitions/flourishes, not something a static page should be
+     doing on a loop. Both fixed (don't scroll with the page) and
      pointer-events:none so they never intercept clicks. */
   #grain {
     position: fixed;
@@ -156,34 +156,16 @@
     50%     { opacity: 1;  transform: scale(1.1); }
   }
 
-  .mote {
-    position: fixed;
-    z-index: 0;
-    border-radius: 9999px;
-    background: var(--text);
-    pointer-events: none;
-    animation-name: moteFloat;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-  }
-  @keyframes moteFloat {
-    0%   { transform: translate3d(0,0,0) scale(1);        opacity: 0; }
-    12%  { opacity: .7; }
-    50%  { transform: translate3d(0,-3.5vmin,0) scale(.6); opacity: .4; }
-    88%  { opacity: .7; }
-    100% { transform: translate3d(0,0,0) scale(1);        opacity: 0; }
-  }
-
   header, main { position: relative; z-index: 1; }
 
   @media (prefers-reduced-motion: reduce) {
     html, body { animation: none; }
     .bg-photo-layer { animation: none; }
-    #grain, #glow, .mote { animation: none; }
+    #grain, #glow { animation: none; }
   }
   html.reduce-motion, html.reduce-motion body { animation: none; }
   html.reduce-motion .bg-photo-layer { animation: none; }
-  html.reduce-motion #grain, html.reduce-motion #glow, html.reduce-motion .mote { animation: none; }
+  html.reduce-motion #grain, html.reduce-motion #glow { animation: none; }
 
   .glass {
     background: var(--glass);
@@ -498,11 +480,6 @@
 <div class="bg-photo-layer" aria-hidden="true"></div>
 <div id="grain" aria-hidden="true"></div>
 <div id="glow" aria-hidden="true"></div>
-<div class="mote" aria-hidden="true" style="left:16%; top:30%; width:3px; height:3px; animation-duration:7s; animation-delay:0s;"></div>
-<div class="mote" aria-hidden="true" style="left:74%; top:24%; width:2px; height:2px; animation-duration:9s; animation-delay:1.2s;"></div>
-<div class="mote" aria-hidden="true" style="left:84%; top:66%; width:3px; height:3px; animation-duration:8s; animation-delay:2.6s;"></div>
-<div class="mote" aria-hidden="true" style="left:22%; top:72%; width:2px; height:2px; animation-duration:10s; animation-delay:.8s;"></div>
-<div class="mote" aria-hidden="true" style="left:60%; top:82%; width:2.5px; height:2.5px; animation-duration:8.5s; animation-delay:3.4s;"></div>
 
 <header>
   <nav class="glass">
