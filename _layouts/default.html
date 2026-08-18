@@ -45,10 +45,14 @@
     position: fixed;
     inset: 0;
     z-index: -1;
+    /* Fixed pixel sizes, not viewport-relative -- percentage-based
+       radial-gradient positions/sizes fade out long before reaching
+       the centered content column on a wide screen, which is why
+       this looked completely flat before. */
     background:
-      radial-gradient(circle at 15% 15%, rgba(255,255,255,0.07), transparent 40%),
-      radial-gradient(circle at 85% 10%, rgba(255,255,255,0.05), transparent 35%),
-      radial-gradient(circle at 50% 95%, rgba(255,255,255,0.06), transparent 45%);
+      radial-gradient(ellipse 900px 500px at 50% -10%, rgba(255,255,255,0.11), transparent 70%),
+      radial-gradient(ellipse 600px 500px at 15% 60%, rgba(255,255,255,0.07), transparent 70%),
+      radial-gradient(ellipse 600px 500px at 85% 90%, rgba(255,255,255,0.07), transparent 70%);
   }
 
   .glass {
