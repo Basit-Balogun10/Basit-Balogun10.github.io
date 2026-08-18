@@ -73,7 +73,15 @@
     padding: 0 20px 80px 20px;
   }
 
-  main > .glass { padding: 36px 40px; }
+  main > .glass {
+    padding: 36px 40px;
+    animation: rise 0.4s ease-out;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
   h1, h2, h3 {
     color: #ffffff;
@@ -156,6 +164,7 @@
   <nav class="glass">
     <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
     <a href="/about/" {% if page.url == "/about/" %}class="active"{% endif %}>About</a>
+    <a href="/resume/" {% if page.url == "/resume/" %}class="active"{% endif %}>Resume</a>
     <a href="/roadmap/" {% if page.url == "/roadmap/" %}class="active"{% endif %}>Roadmap</a>
     <a href="/blog/" {% if page.url == "/blog/" or page.layout == "post" %}class="active"{% endif %}>Blog</a>
   </nav>
