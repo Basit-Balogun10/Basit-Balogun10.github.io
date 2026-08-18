@@ -7,6 +7,8 @@ permalink: /
 
 Software engineer, making myself a noob again on purpose - chip design, verification, firmware, learned live on stream. [A little more on why I'm actually doing this →](/about/)
 
+I basically stream that process and the things I'm building live, and whenever something's actually finished it turns into a [write-up](/blog/) (and hopefully a walkthrough on YouTube as well). [Here's what I'm actually building →](/roadmap/)
+
 <div class="social-links">
   <a href="mailto:basitbalogun10@gmail.com">Email</a>
   <a href="https://github.com/Basit-Balogun10">GitHub</a>
@@ -15,8 +17,6 @@ Software engineer, making myself a noob again on purpose - chip design, verifica
   <a href="https://linkedin.com/in/basit-balogun">LinkedIn</a>
   <a href="https://x.com/Basit_Balogun10">X</a>
 </div>
-
-I basically stream that process and the things I'm building live, and whenever something's actually finished it turns into a [write-up](/blog/) (and hopefully a walkthrough on YouTube as well). [Here's what I'm actually building →](/roadmap/)
 
 <details class="resume-toggle">
 <summary>Here's some highlights about myself <span class="chevron">›</span></summary>
