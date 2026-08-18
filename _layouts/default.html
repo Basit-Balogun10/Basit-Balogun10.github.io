@@ -26,6 +26,14 @@
 
   * { box-sizing: border-box; }
 
+  /* Smooth cross-fade between pages on real (non-SPA) navigation.
+     No JS, no framework -- just a CSS opt-in. Chromium supports it
+     today; unsupported browsers just get normal instant navigation,
+     same as before this rule existed. */
+  @view-transition {
+    navigation: auto;
+  }
+
   /* Gradients are layered directly on body's own background (not a
      separate ::before with z-index) -- that avoids any stacking-context
      ambiguity, since body itself isn't positioned and z-index on an
@@ -39,36 +47,52 @@
     padding: 0;
     min-height: 100vh;
     background:
-      radial-gradient(ellipse 1000px 600px at 50% -10%, rgba(255,255,255,0.35), transparent 70%),
-      radial-gradient(ellipse 700px 550px at 15% 60%, rgba(255,255,255,0.22), transparent 70%),
-      radial-gradient(ellipse 700px 550px at 85% 90%, rgba(255,255,255,0.22), transparent 70%),
+      radial-gradient(ellipse 1000px 600px at 50% -10%, rgba(255,255,255,0.42), transparent 70%),
+      radial-gradient(ellipse 700px 550px at 15% 60%, rgba(255,255,255,0.28), transparent 70%),
+      radial-gradient(ellipse 700px 550px at 85% 90%, rgba(255,255,255,0.28), transparent 70%),
       #0a0a0a;
     /* Larger than the viewport so background-position has room to
        actually pan -- without this, the gradients already cover
        100% of the element and shifting position has nothing visible
        to do. */
-    background-size: 130% 130%;
+    background-size: 145% 145%;
     background-attachment: fixed;
-    animation: drift 30s ease-in-out infinite alternate;
+    animation: drift 24s ease-in-out infinite alternate;
     color: var(--text);
     font-family: 'Ubuntu Mono', 'Cascadia Mono', 'SF Mono', Consolas, Menlo, monospace;
     line-height: 1.7;
   }
 
-  /* Swapped in by JS once a randomly-picked background photo has
-     actually finished loading (see script at the bottom) -- the plain
-     gradient above is the real fallback, not a placeholder: it's what
-     stays if JS fails, if the image errors, or if the visitor has
-     Data Saver on (checked before the image is ever requested). */
-  html.bg-photo, body.bg-photo {
+  /* Real Ken Burns (zoom + pan on a still image), same mechanism as
+     Lively Wallpaper's generator: an oversized layer (124% width/height,
+     inset -12% top/left so zoom/pan never reveals empty edges) animated
+     via transform, not background-position -- transform is what lets
+     this actually scale smoothly instead of just panning. Swapped in by
+     JS once a randomly-picked photo has finished loading; the plain
+     drifting gradient above is the real fallback (no-JS, image load
+     failure, Data Saver, or the visitor turning it off), not a
+     placeholder. */
+  .bg-photo-layer {
+    display: none;
+    position: fixed;
+    top: -12%;
+    left: -12%;
+    width: 124%;
+    height: 124%;
+    z-index: -1;
     background-image:
       linear-gradient(rgba(10,10,10,0.55), rgba(10,10,10,0.75)),
       var(--bg-photo);
-    background-size: cover, 130% 130%;
+    background-size: cover;
+    background-position: center;
+    animation: kenburns 42s ease-in-out infinite alternate;
   }
+  body.bg-photo .bg-photo-layer { display: block; }
+  body.bg-photo { animation: none; }
 
   @media (prefers-reduced-motion: reduce) {
     html, body { animation: none; }
+    .bg-photo-layer { animation: none; }
   }
 
   .glass {
@@ -80,9 +104,12 @@
   }
 
   header {
-    max-width: 700px;
+    max-width: 820px;
     margin: 0 auto;
     padding: 32px 20px 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
   }
 
   nav {
@@ -107,7 +134,7 @@
   nav a.active { color: var(--text); background: var(--glass-strong); }
 
   main {
-    max-width: 700px;
+    max-width: 820px;
     margin: 0 auto;
     padding: 0 20px 80px 20px;
   }
@@ -124,7 +151,12 @@
 
   @keyframes drift {
     from { background-position: 0% 0%; }
-    to { background-position: 10% 6%; }
+    to { background-position: 20% 14%; }
+  }
+
+  @keyframes kenburns {
+    from { transform: scale(1) translate(0%, 0%); }
+    to { transform: scale(1.15) translate(-2.5%, 2%); }
   }
 
   h1, h2, h3 {
@@ -257,9 +289,52 @@
   .post-list-item a:hover { color: var(--text-dim); }
 
   .empty-note { color: var(--text-dimmer); font-size: 14px; }
+
+  /* Only shown once a background photo has actually loaded and is
+     showing -- deliberately small and easy to ignore, not a settings
+     panel. Says what it costs, gives a one-click way to turn it off,
+     nothing more. */
+  #bg-note {
+    display: none;
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    font-size: 10px;
+    color: var(--text-dimmer);
+    z-index: 10;
+  }
+  #bg-note.visible { display: block; }
+  #bg-note button {
+    font: inherit;
+    font-size: 10px;
+    color: var(--text-dimmer);
+    background: none;
+    border: none;
+    text-decoration: underline;
+    text-decoration-color: var(--text-dimmer);
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  }
+  #bg-note button:hover { color: var(--text-dim); text-decoration-color: var(--text-dim); }
+
+  @media (max-width: 480px) {
+    header { padding: 16px 12px 0 12px; }
+    main { padding: 0 12px 60px 12px; }
+    main > .glass { padding: 20px 18px; }
+    nav { gap: 4px; padding: 8px 10px; }
+    nav a { padding: 6px 10px; font-size: 11px; }
+    h1 { font-size: 21px; }
+    h2 { font-size: 16px; margin-top: 30px; }
+    p, ul, ol { font-size: 14px; }
+    .social-links a { padding: 5px 11px; font-size: 12px; }
+    #bg-note { font-size: 9px; bottom: 8px; right: 8px; }
+  }
 </style>
 </head>
 <body>
+
+<div class="bg-photo-layer" aria-hidden="true"></div>
 
 <header>
   <nav class="glass">
@@ -276,27 +351,65 @@
 </div>
 </main>
 
+<div id="bg-note">
+  Background photo (~50KB) &middot; <button id="bg-toggle" type="button">Turn off</button>
+</div>
+
 <script>
 // One random background photo per page load -- not fetched from any
 // live API, just picked from the small pre-optimized set already in
-// this repo (14 images, ~55KB average). Respects Data Saver (skipped
-// entirely, never even requested, if the visitor has it on) and only
-// swaps the CSS in once the image has actually finished loading, so
-// there's no flash of a broken/half-loaded background. The plain
-// gradient in the CSS is the real fallback -- not a placeholder -- for
-// no-JS, image-load-failure, and Data Saver cases alike.
+// this repo (14 images, ~55KB average). Respects Data Saver and a
+// manually-set preference (skipped entirely, never even requested,
+// in either case) and only swaps the CSS in once the image has
+// actually finished loading, so there's no flash of a broken/half-
+// loaded background. The plain gradient in the CSS is the real
+// fallback -- not a placeholder -- for no-JS, image-load-failure,
+// Data Saver, and manually-disabled cases alike.
 (function () {
+  var STORAGE_KEY = 'bg-photo-disabled';
+  var note = document.getElementById('bg-note');
+  var toggle = document.getElementById('bg-toggle');
+
+  // Data Saver is an environment-level signal, not something to surface
+  // UI for -- stay fully silent (no note, no photo, no toggle) rather
+  // than showing a control for something already decided upstream.
   if (navigator.connection && navigator.connection.saveData) return;
-  var count = 14;
-  var pick = 'bg-' + String(Math.floor(Math.random() * count) + 1).padStart(2, '0') + '.webp';
-  var url = '/images/bg/' + pick;
-  var img = new Image();
-  img.onload = function () {
-    document.documentElement.style.setProperty('--bg-photo', 'url(' + url + ')');
-    document.documentElement.classList.add('bg-photo');
-    document.body.classList.add('bg-photo');
+
+  function disabled() {
+    return localStorage.getItem(STORAGE_KEY) === '1';
+  }
+
+  function loadPhoto() {
+    var count = 14;
+    var pick = 'bg-' + String(Math.floor(Math.random() * count) + 1).padStart(2, '0') + '.webp';
+    var url = '/images/bg/' + pick;
+    var img = new Image();
+    img.onload = function () {
+      document.documentElement.style.setProperty('--bg-photo', 'url(' + url + ')');
+      document.documentElement.classList.add('bg-photo');
+      document.body.classList.add('bg-photo');
+    };
+    img.src = url;
+  }
+
+  toggle.onclick = function () {
+    var nowDisabled = !disabled();
+    localStorage.setItem(STORAGE_KEY, nowDisabled ? '1' : '0');
+    toggle.textContent = nowDisabled ? 'Turn on' : 'Turn off';
+    if (nowDisabled) {
+      document.documentElement.classList.remove('bg-photo');
+      document.body.classList.remove('bg-photo');
+    } else {
+      loadPhoto();
+    }
   };
-  img.src = url;
+
+  // The note (and its toggle) is always visible once we get this far,
+  // regardless of current on/off state -- otherwise a disabled photo
+  // has no way back to being re-enabled.
+  toggle.textContent = disabled() ? 'Turn on' : 'Turn off';
+  note.classList.add('visible');
+  if (!disabled()) loadPhoto();
 })();
 
 // .resume-content starts at opacity:0 always (see CSS). Adding
