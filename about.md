@@ -5,7 +5,7 @@ permalink: /about/
 
 I'm an software engineer. Well it's not like I'm not trying to stop being one or anything, I'm basically just trying to get more serious with hardware.
 
-Software (application-level... just started looking into systems programming more recently) has been my home turf for a 5-6 years now, so going into chip design, verification, embedded firmware, all of that... I'm pretty much a beginner again. Basically, satisfying my curiousity on the other side of the spectrum, as I've always been dealing with the application layer, and now want to get as close to the bare metal and silicon as possible.
+Software (application-level... just started looking into systems programming with Rust more recently) has been my home turf for a 5-6 years now, so going into chip design, verification, embedded firmware, all of that... I'm pretty much a beginner again. Basically, satisfying my curiousity on the other side of the spectrum, as I've always been dealing with the application layer, and now want to get as close to the bare metal and silicon as possible.
 
 I've already seen what AI can do in this space too. I've done two AI-assisted chip design/verification competitions and actually won one of them, so I know I could probably get pretty far just leaning on AI and "vibing" my way through the whole thing... but I don't really want to do that.
 
