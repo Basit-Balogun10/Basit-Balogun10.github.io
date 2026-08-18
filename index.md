@@ -19,7 +19,7 @@ Software engineer, making myself a noob again on purpose - chip design, verifica
 I basically stream that process and the things I'm building live, and whenever something's actually finished it turns into a [write-up](/blog/) (and hopefully a walkthrough on YouTube as well). [Here's what I'm actually building →](/roadmap/)
 
 <details class="resume-toggle">
-<summary><span class="label-closed">Here's some highlights about myself</span><span class="label-open">Hide highlights</span> <span class="chevron">›</span></summary>
+<summary>Here's some highlights about myself <span class="chevron">›</span></summary>
 <div class="resume-content" markdown="1">
 
 ## Professional experience

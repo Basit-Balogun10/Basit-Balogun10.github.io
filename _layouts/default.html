@@ -198,16 +198,26 @@
   }
   details.resume-toggle[open] summary .chevron { transform: rotate(90deg); }
 
-  details.resume-toggle .label-open { display: none; }
-  details.resume-toggle[open] .label-closed { display: none; }
-  details.resume-toggle[open] .label-open { display: inline; }
-
-  /* Re-triggers each time <details> opens -- a display:none -> visible
-     transition restarts a statically-applied CSS animation, no JS
-     needed. */
+  /* Transition-based, not a keyframe animation -- driven by the
+     .visible class from the toggle listener below. A restarted
+     keyframe animation flashes the content at full opacity for one
+     frame before jumping back to its 0% state, which reads as a
+     flicker; a transition just interpolates smoothly from wherever
+     it currently is. */
+  /* Starts hidden only once JS confirms it can actually reveal it
+     again (.js-anim, added on load) -- without that, content would
+     stay stuck at opacity:0 forever if JS fails to run. */
   .resume-content {
     margin-top: 16px;
-    animation: rise 0.4s ease-out;
+  }
+  .resume-content.js-anim {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  }
+  .resume-content.js-anim.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
   .resume-content > h2:first-of-type { margin-top: 12px; }
 
@@ -251,17 +261,26 @@
 </main>
 
 <script>
-// The pure-CSS "display:none -> visible restarts a static animation"
-// trick doesn't reliably restart animations on <details> across
-// browsers, so this forces it explicitly on every open.
+// .resume-content starts at opacity:0 always (see CSS). Adding
+// .visible one frame after <details> opens lets the transition
+// animate smoothly from that 0 state -- the double rAF ensures the
+// browser has actually painted the opacity:0 frame first, so there's
+// no flash to full opacity before the fade-in starts.
 document.querySelectorAll('details.resume-toggle').forEach(function (d) {
+  var content = d.querySelector('.resume-content');
+  if (!content) return;
+  content.classList.add('js-anim');
   d.addEventListener('toggle', function () {
-    if (!d.open) return;
-    var content = d.querySelector('.resume-content');
-    if (!content) return;
-    content.style.animation = 'none';
-    void content.offsetHeight;
-    content.style.animation = '';
+    if (d.open) {
+      content.classList.remove('visible');
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          content.classList.add('visible');
+        });
+      });
+    } else {
+      content.classList.remove('visible');
+    }
   });
 });
 </script>
