@@ -10,21 +10,19 @@ So I'm working through pretty much the whole digital design stack (well, Claude 
 Here's the list, roughly in the order I'm going through it:
 
 1. Low-speed control — UART, SPI, I2C, I3C
-2. High-speed SerDes
-3. On-chip bus fabrics
-4. Streaming dataflow
-5. Memory and caching
-6. Hardware compute
-7. Display and media
-8. System control
-9. Processors and debug
+2. High-speed SerDes — 8b/10b encoding, 10G Ethernet MAC/PCS, PCIe endpoint, USB3 PIPE
+3. On-chip bus fabrics — AXI4-Lite slave, AXI4 multi-master interconnect, APB/AHB bridges, TileLink
+4. Streaming dataflow — AXI4-Stream skid buffer, scatter-gather DMA
+5. Memory and caching — async CDC FIFO, SRAM/SDRAM controller, DDR4 PHY, L1/L2 cache (MESI)
+6. Hardware compute — AES-128, SHA-256, pipelined FIR filter, systolic NPU engine
+7. Display and media — VGA pattern/text engine, HDMI 2.0 framebuffer, MIPI CSI-2 camera ISP
+8. System control — timers, PWM core, NVIC/PLIC interrupt controller, clock gating units
+9. Processors and debug — RV32I pipelined CPU core, JTAG TAP controller, hardware breakpoints
 
-Plus the FPGA implementation side and embedded firmware, sitting alongside all of that wherever it's relevant.
+And for each core, it's not really one hardware branch, it's two: an ASIC path (synthesis, place and route, all the way to a real GDSII) and an FPGA path (down to an actual bitstream) — plus firmware, wherever a core actually needs something driving it from software.
 
 ## Right now
 
 UART. Register bank, baud generator, shift registers, FSMs, synchronizers, FIFOs, all wired together. First one on the list, so also kind of the first time actually doing any of this for real lol.
 
-Everything past that is just... next, whenever I get there. No fixed timeline, not trying to rush it.
-
-Live builds happen on stream, finished stuff turns into a [write-up](/blog/) eventually, and if you're wondering why any of this exists at all, that's the [about page](/about/).
+Live builds happen on stream, finished stuff turns into a [write-up](/blog/) eventually (and maybe a walkthrough video on YouTube as well), and if you're wondering why any of this exists at all, that's the [about page](/about/).
