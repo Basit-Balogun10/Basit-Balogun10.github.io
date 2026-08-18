@@ -166,19 +166,24 @@
   details.resume-toggle summary {
     cursor: pointer;
     list-style: none;
-    display: inline-block;
-    padding: 10px 18px;
-    border-radius: 10px;
-    background: var(--glass);
-    border: 1px solid var(--border);
     color: var(--text);
-    font-size: 14px;
+    text-decoration: underline;
+    text-decoration-color: var(--text-dimmer);
+    text-underline-offset: 3px;
+    font-size: 15px;
     user-select: none;
   }
   details.resume-toggle summary::-webkit-details-marker { display: none; }
-  details.resume-toggle summary:hover { background: var(--glass-strong); }
-  details.resume-toggle[open] summary { margin-bottom: 8px; }
-  details.resume-toggle > h2:first-of-type { margin-top: 12px; }
+  details.resume-toggle summary:hover { text-decoration-color: var(--text); }
+
+  /* Re-triggers each time <details> opens -- a display:none -> visible
+     transition restarts a statically-applied CSS animation, no JS
+     needed. */
+  .resume-content {
+    margin-top: 16px;
+    animation: rise 0.4s ease-out;
+  }
+  .resume-content > h2:first-of-type { margin-top: 12px; }
 
   .post-list-item {
     padding: 16px;

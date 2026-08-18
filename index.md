@@ -18,18 +18,9 @@ Software engineer, making myself a noob again on purpose — chip design, verifi
 
 I basically stream that process and the things I'm building live, and whenever something's actually finished it turns into a [write-up](/blog/) (and hopefully a [walkthrough on YouTube](https://www.youtube.com/@basitbalogun10) as well). [Here's what I'm actually building →](/roadmap/)
 
-<details class="resume-toggle" markdown="1">
+<details class="resume-toggle">
 <summary>Here's some highlights about myself →</summary>
-
-## Technical skills
-
-- **Languages**: TypeScript, JavaScript, Python, C++, SQL, Verilog, SystemVerilog
-- **Hardware & EDA**: Yosys, OpenLANE
-- **Frontend**: React, React Native, Next.js, Vite.js, NativeWind, Tailwind CSS, Flutter
-- **Backend**: Node.js, Express.js, Django, Redis
-- **DevOps & Cloud**: AWS (EKS, ECR, Fargate), Kubernetes, Docker, Terraform, Ansible, CI/CD (GitHub Actions), Helm
-- **Testing**: Jest, Cypress, Cocotb
-- **Observability**: Sentry, ELK Stack (Elasticsearch, Logstash, Kibana), PagerDuty
+<div class="resume-content" markdown="1">
 
 ## Professional experience
 
@@ -115,6 +106,7 @@ I basically stream that process and the things I'm building live, and whenever s
 ## Education
 
 **Bachelor of Engineering, Electrical and Electronics Engineering**
-University of Lagos · 2021 – 2026
+University of Lagos
 
+</div>
 </details>
