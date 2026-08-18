@@ -29,10 +29,26 @@
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: radial-gradient(circle at 50% 0%, #161616 0%, #0a0a0a 55%);
+    background: #0a0a0a;
     color: var(--text);
     font-family: 'Ubuntu Mono', 'Cascadia Mono', 'SF Mono', Consolas, Menlo, monospace;
     line-height: 1.7;
+  }
+
+  /* Fixed so it doesn't scroll away -- gives the .glass panels'
+     backdrop-filter something real to blur against, so the glass
+     effect reads for every visitor, not just ones with their own
+     OS-level window transparency turned on (that's a separate,
+     per-user thing this page has no control over either way). */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(255,255,255,0.07), transparent 40%),
+      radial-gradient(circle at 85% 10%, rgba(255,255,255,0.05), transparent 35%),
+      radial-gradient(circle at 50% 95%, rgba(255,255,255,0.06), transparent 45%);
   }
 
   .glass {
@@ -57,7 +73,8 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     padding: 10px 14px;
-    margin-bottom: 32px;
+    margin: 0 auto 32px auto;
+    width: fit-content;
   }
   nav a {
     color: var(--text-dim);
@@ -160,7 +177,8 @@
   }
   details.resume-toggle summary::-webkit-details-marker { display: none; }
   details.resume-toggle summary:hover { background: var(--glass-strong); }
-  details.resume-toggle[open] summary { margin-bottom: 28px; }
+  details.resume-toggle[open] summary { margin-bottom: 8px; }
+  details.resume-toggle > h2:first-of-type { margin-top: 12px; }
 
   .post-list-item {
     padding: 16px;

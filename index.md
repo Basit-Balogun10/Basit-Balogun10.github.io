@@ -5,7 +5,7 @@ permalink: /
 
 # Basit Balogun
 
-Software engineer, currently making myself a beginner again on purpose — chip design, verification, firmware, learned live on stream. [Why I'm doing this →](/about/)
+Software engineer, making myself a noob again on purpose — chip design, verification, firmware, learned live on stream. [A little more on why I'm actually doing this →](/about/)
 
 <div class="social-links">
   <a href="mailto:basitbalogun10@gmail.com">Email</a>
@@ -16,8 +16,10 @@ Software engineer, currently making myself a beginner again on purpose — chip 
   <a href="https://www.youtube.com/@basitbalogun10">YouTube</a>
 </div>
 
+I basically stream that process and the things I'm building live, and whenever something's actually finished it turns into a [write-up](/blog/) (and hopefully a [walkthrough on YouTube](https://www.youtube.com/@basitbalogun10) as well). [Here's what I'm actually building →](/roadmap/)
+
 <details class="resume-toggle" markdown="1">
-<summary>Here's a bit about my work so far →</summary>
+<summary>Here's some highlights about myself →</summary>
 
 ## Technical skills
 
@@ -116,7 +118,3 @@ Software engineer, currently making myself a beginner again on purpose — chip 
 University of Lagos · 2021 – 2026
 
 </details>
-
----
-
-Streaming the actual building as it happens. Whenever something's actually finished it turns into a [write-up](/blog/) (and hopefully a [walkthrough on YouTube](https://www.youtube.com/@basitbalogun10)). [What I'm actually building →](/roadmap/)
