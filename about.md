@@ -3,13 +3,13 @@ title: About
 permalink: /about/
 ---
 
-I'm an software engineer. Well it's not like I'm not trying to stop being one or anything, I'm basically just trying to get more serious with hardware.
+I'm an software engineer. it's not like I'm trying to stop being one or anything, I'm basically just trying to get more serious with hardware.
 
 Software (application-level... just started looking into systems programming with Rust more recently) has been my home turf for a 5-6 years now, so going into chip design, verification, embedded firmware, all of that... I'm pretty much a beginner again. Basically, satisfying my curiousity on the other side of the spectrum, as I've always been dealing with the application layer, and now want to get as close to the bare metal and silicon as possible.
 
 I've already seen what AI can do in this space too. I've done two AI-assisted chip design/verification competitions and actually won one of them, so I know I could probably get pretty far just leaning on AI and "vibing" my way through the whole thing... but I don't really want to do that.
 
-What I want is the same fluency with hardware that I eventually built up with software. I want to get to the point where I understand what's happening well enough that I can confidently build stuff myself, such that I can then get these LLMs vibe through the implementation details for me while I focus on the systems-level/architectural thinking (yea really, part of the whole is so that I can get to build much more interesting stuff I have in plans with AI's heavy assistance in the loop). And getting there means actually learning the stuff. Getting stuck on stupid things, going down the wrong path for three hours, finally figuring it out, and then wondering how I ever didn't understand it.
+What I want is the same fluency with hardware that I eventually built up with software. I want to get to the point where I understand what's happening well enough that I can confidently build stuff myself, such that I can then get these LLMs vibe through the implementation details for me while I focus on the systems-level/architectural thinking (yea really, part of the whole thing is so that I can get to build much more interesting stuff I have in plans with AI's heavy assistance in the loop). And getting there means actually learning the stuff. Getting stuck on stupid things, going down the wrong path for three hours, finally figuring it out, and then wondering how I ever didn't understand it.
 
 And that process is exactly what happens on my streams. Although, if I'm being honest, I didn't really plan to stream lol. Just felt the urge to do so on a Friday morning (I had just gotten started with a UART's register bank) and thought "Oh well, I'll just take this thing online". I also had some vague idea that maybe I'd get more done if people were watching, but mostly I think I was just excited about the whole thing and wanted to share it. I mean it's just me on the stream, nobody is really watching (yet) lol.
 

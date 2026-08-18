@@ -22,6 +22,8 @@ I basically stream that process and the things I'm building live, and whenever s
 <summary>Here's some highlights about myself <span class="chevron">›</span></summary>
 <div class="resume-content" markdown="1">
 
+---
+
 ## Professional experience
 
 **Software Engineering Intern → Software Engineer**, Matt Young Media (MYM) - *Apr 2023 – Feb 2024*
