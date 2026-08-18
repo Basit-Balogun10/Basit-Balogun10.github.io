@@ -55,6 +55,22 @@
     line-height: 1.7;
   }
 
+  /* Swapped in by JS once a randomly-picked background photo has
+     actually finished loading (see script at the bottom) -- the plain
+     gradient above is the real fallback, not a placeholder: it's what
+     stays if JS fails, if the image errors, or if the visitor has
+     Data Saver on (checked before the image is ever requested). */
+  html.bg-photo, body.bg-photo {
+    background-image:
+      linear-gradient(rgba(10,10,10,0.55), rgba(10,10,10,0.75)),
+      var(--bg-photo);
+    background-size: cover, 130% 130%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html, body { animation: none; }
+  }
+
   .glass {
     background: var(--glass);
     backdrop-filter: blur(28px);
@@ -261,6 +277,28 @@
 </main>
 
 <script>
+// One random background photo per page load -- not fetched from any
+// live API, just picked from the small pre-optimized set already in
+// this repo (14 images, ~55KB average). Respects Data Saver (skipped
+// entirely, never even requested, if the visitor has it on) and only
+// swaps the CSS in once the image has actually finished loading, so
+// there's no flash of a broken/half-loaded background. The plain
+// gradient in the CSS is the real fallback -- not a placeholder -- for
+// no-JS, image-load-failure, and Data Saver cases alike.
+(function () {
+  if (navigator.connection && navigator.connection.saveData) return;
+  var count = 14;
+  var pick = 'bg-' + String(Math.floor(Math.random() * count) + 1).padStart(2, '0') + '.webp';
+  var url = '/images/bg/' + pick;
+  var img = new Image();
+  img.onload = function () {
+    document.documentElement.style.setProperty('--bg-photo', 'url(' + url + ')');
+    document.documentElement.classList.add('bg-photo');
+    document.body.classList.add('bg-photo');
+  };
+  img.src = url;
+})();
+
 // .resume-content starts at opacity:0 always (see CSS). Adding
 // .visible one frame after <details> opens lets the transition
 // animate smoothly from that 0 state -- the double rAF ensures the
