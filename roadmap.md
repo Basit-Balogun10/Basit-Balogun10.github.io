@@ -19,7 +19,7 @@ Here's the list, roughly in the order I'm going through it:
 8. System control - timers, PWM core, NVIC/PLIC interrupt controller, clock gating units
 9. Processors and debug - RV32I pipelined CPU core, JTAG TAP controller, hardware breakpoints
 
-And for each core, it's not really one hardware branch, it's two: an ASIC path (synthesis, place and route, all the way to a real GDSII) and an FPGA path (down to an actual bitstream) - plus firmware, wherever a core actually needs something driving it from software.
+And for each core, there are two branches: an ASIC path (synthesis, place and route, all the way to a real GDSII) and an FPGA path (down to an actual bitstream) - plus firmware, wherever a core actually needs something driving it from software.
 
 ## Right now
 
