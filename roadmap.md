@@ -9,14 +9,14 @@ So I'm working through pretty much the whole digital design stack (well, Claude 
 
 Here's the list, roughly in the order I'm going through it:
 
-1. Low-speed control - UART, SPI, I2C, I3C, GPIO
-2. High-speed SerDes - 8b/10b encoding, 10G Ethernet MAC/PCS, PCIe endpoint, USB3 PIPE
+1. Low-speed control - UART, SPI, I2C, I3C, GPIO, CAN
+2. High-speed SerDes - 8b/10b encoding, 10G Ethernet MAC/PCS, PCIe endpoint, USB3 PIPE, USB2 device controller
 3. On-chip bus fabrics - AXI4-Lite slave, AXI4 multi-master interconnect, APB/AHB bridges, TileLink, multi-core coherent interconnect (NoC)
 4. Streaming dataflow - AXI4-Stream skid buffer, scatter-gather DMA
 5. Memory and caching - async CDC FIFO, SRAM/SDRAM controller, DDR4 PHY, L1/L2 cache (MESI), ECC memory protection, eFuse/OTP memory
 6. Hardware compute - AES-128, SHA-256, pipelined FIR filter, systolic NPU engine, RNG, GPU/graphics rendering engine
 7. Display and media - VGA pattern/text engine, HDMI 2.0 framebuffer, MIPI CSI-2 camera ISP, audio/I2S codec
-8. System control - timers, PWM core, NVIC/PLIC interrupt controller, clock gating units, power management/DVFS, watchdog timer, RTC
+8. System control - timers, PWM core, NVIC/PLIC interrupt controller, clock gating units, power management/DVFS, watchdog timer, RTC, ADC/DAC digital interface
 9. Processors and debug - RV32I pipelined CPU core, JTAG TAP controller, hardware breakpoints, boot ROM/secure boot, CoreSight-style trace, DFT/scan-chain
 
 And for each core, there are two branches: an ASIC path (synthesis, place and route, all the way to a real GDSII) and an FPGA path (down to an actual bitstream) - plus firmware, wherever a core actually needs something driving it from software.
