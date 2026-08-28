@@ -26,6 +26,13 @@ I basically stream that process and the things I'm building live, and whenever s
 
 ## Professional experience
 
+**Hardware/Firmware Engineering Intern**, ChipMango - *Apr 2026 – Present*
+
+- Independently researched and documented the interface contracts and system architecture for a 5-group, cross-team NFC voter-accreditation ASIC project - without being the assigned architect - becoming the reference every other group implemented against.
+- Designed, implemented, and verified the full data-retrieval & authentication pipeline in SystemVerilog (NFC protocol frontend, flash record-lookup FSM, authentication FSM) end-to-end; built the unit and full-system Verilator testbenches that caught and fixed multiple real hardware bugs, including a probe-index wraparound that could have corrupted unrelated flash memory and a signal-timing bug that had evaded 91 prior passing checks.
+- Built and deployed secure remote-access infrastructure (Headscale/WireGuard, DuckDNS, custom ACLs) for a shared embedded lab board, eliminating a single-connection bottleneck for the full intern cohort.
+- Self-directed an embedded-systems curriculum from bare-metal toolchain and clock bring-up through peripheral driver development (GPIO, interrupts/NVIC, timers/PWM, UART, ADC, SPI, I2C) at the register level, implemented in both C and Rust.
+
 **Software Engineering Intern → Software Engineer**, Matt Young Media (MYM) - *Apr 2023 – Feb 2024*
 
 - Developed and shipped key features and bug fixes for a leads generation tool, reducing pre-launch crashes by over 20%.
@@ -64,7 +71,14 @@ I basically stream that process and the things I'm building live, and whenever s
 
 ## Projects
 
-**Farmceries** - React Native, TypeScript, Express.js, Redis, NativeWind · *Jan 2024 – Present*
+**Secure UART Peripheral** (AI-HDL 2026) - Verilog, Cocotb, Yosys, OpenLANE · *Jan 2026 – Apr 2026*
+
+- Repository: [github.com/Basit-Balogun10/team-farmceries-AI-HDL-2026](https://github.com/Basit-Balogun10/team-farmceries-AI-HDL-2026/tree/basit-dp-1)
+- Designed and implemented a complete UART serial communication system with 4 configurable baud rates and a memory-mapped register interface for a RISC-V CPU.
+- Integrated an AES-128 hardware encryption engine directly into the datapath, achieving successful synthesis (~98k cells) using Yosys.
+- Developed comprehensive testbenches using Python and Cocotb to verify cryptographic transformations and serial data transmission.
+
+**Farmceries** - React Native, TypeScript, Express.js, Redis, NativeWind · *Jan 2024 – 2025*
 
 - Links: [Watch Demo](https://docs.google.com/document/d/1dM9UtTIIHtOlvS8rosEuQvJt0vfIOqXo_u0_yWPiURk/edit) | [Download APK](https://farmceries-backend.vercel.app/download-apk)
 - As the sole engineer, led the end-to-end technical development of an award-winning cross-platform mobile e-commerce app addressing socio-economic challenges for farmers, vendors, and consumers.
@@ -73,17 +87,10 @@ I basically stream that process and the things I'm building live, and whenever s
 - Took ownership of product strategy and customer-centric design, resulting in a user-friendly interface that generated significant pre-launch interest and waitlist growth.
 - Wore multiple hats (engineer, designer, product strategist) while collaborating effectively with non-technical team members.
 
-**"Fuse" - Cloud-Native Platform** - Microservices, AWS, Kubernetes, Terraform, Docker, Ansible, ELK Stack, PagerDuty *(contract, private repo)*
+**"Fuse" - Cloud-Native Platform** - Microservices, AWS, Kubernetes, Terraform, Docker, Ansible, ELK Stack, PagerDuty · *Nov 2024 – Jun 2025* *(contract, private repo)*
 
 - After delivering the web application, architected and implemented a complete, production-grade cloud-native ecosystem on AWS for a multi-service application, automating the entire infrastructure and deployment lifecycle from scratch.
 - Built a CI/CD pipeline with GitHub Actions, featuring dynamic image tagging, automated environment creation/teardown for PRs, semantic versioning, and integrated security scanning.
-
-**Secure UART Peripheral** (AI-HDL 2026) - Verilog, Cocotb, Yosys, OpenLANE
-
-- Repository: [github.com/Basit-Balogun10/team-farmceries-AI-HDL-2026](https://github.com/Basit-Balogun10/team-farmceries-AI-HDL-2026/tree/basit-dp-1)
-- Designed and implemented a complete UART serial communication system with 4 configurable baud rates and a memory-mapped register interface for a RISC-V CPU.
-- Integrated an AES-128 hardware encryption engine directly into the datapath, achieving successful synthesis (~98k cells) using Yosys.
-- Developed comprehensive testbenches using Python and Cocotb to verify cryptographic transformations and serial data transmission.
 
 ## Hackathon achievements
 
@@ -140,7 +147,7 @@ I basically stream that process and the things I'm building live, and whenever s
 ## Education
 
 **Bachelor of Science, Electrical and Electronics Engineering**
-University of Lagos
+University of Lagos | 2021 - 2027 (extended one year, nationwide academic strike)
 
 </div>
 </details>
