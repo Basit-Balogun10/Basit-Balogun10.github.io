@@ -30,7 +30,7 @@ I basically stream that process and the things I'm building live, and whenever s
 
 - Independently researched and documented the interface contracts and system architecture for a 5-group, cross-team NFC voter-accreditation ASIC project - without being the assigned architect - becoming the reference every other group implemented against.
 - Designed, implemented, and verified the full data-retrieval & authentication pipeline in SystemVerilog (NFC protocol frontend, flash record-lookup FSM, authentication FSM) end-to-end; built the unit and full-system Verilator testbenches that caught and fixed multiple real hardware bugs, including a probe-index wraparound that could have corrupted unrelated flash memory and a signal-timing bug that had evaded 91 prior passing checks.
-- Built and deployed secure remote-access infrastructure (Headscale/WireGuard, DuckDNS, custom ACLs) for a shared embedded lab board, eliminating a single-connection bottleneck for the full intern cohort.
+- Built and deployed secure remote-access infrastructure (Headscale/WireGuard, DuckDNS, custom ACLs) for a shared BeagleBone Black lab board, eliminating a single-connection bottleneck for the full intern cohort.
 - Self-directed an embedded-systems curriculum from bare-metal toolchain and clock bring-up through peripheral driver development (GPIO, interrupts/NVIC, timers/PWM, UART, ADC, SPI, I2C) at the register level, implemented in both C and Rust.
 
 **Software Engineering Intern → Software Engineer**, Matt Young Media (MYM) - *Apr 2023 – Feb 2024*
