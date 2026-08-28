@@ -94,7 +94,7 @@ I basically stream that process and the things I'm building live, and whenever s
 
 ## Hackathon achievements
 
-**Winner - ISQED Agentic AI Design Verification Challenge 2026**
+**Winner - ISQED Agentic AI Design Verification Challenge** *(April 2026)*
 
 - Built a full agentic AI verification pipeline across all four competition phases - custom specialized agents for test generation, coverage-directed stimulus, waveform debugging, and autonomous end-to-end verification - spanning DUTs including AES-128, I2C, HMAC-SHA256, and UART, securing first place.
 - Proof: [LinkedIn post](https://lnkd.in/p/dXHPDn9V)
