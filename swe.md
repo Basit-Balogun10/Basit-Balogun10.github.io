@@ -1,18 +1,11 @@
 ---
-title: Software Engineering
+title: Basit Balogun
 permalink: /swe/
 ---
 
-# Software Engineering — Basit Balogun
+# Basit Balogun
 
-*This page collects my software-only work in one place. What I'm mostly up to recently — chips, firmware, embedded Linux, all of it learned live — lives on the [homepage](/).*
-
-<div class="social-links">
-  <a href="mailto:basitbalogun10@gmail.com">Email</a>
-  <a href="https://github.com/Basit-Balogun10">GitHub</a>
-  <a href="https://linkedin.com/in/basit-balogun">LinkedIn</a>
-  <a href="https://x.com/Basit_Balogun10">X</a>
-</div>
+*This page collects my software-only work in one place. What I'm mostly up to recently - chips, firmware, embedded Linux, all of it learned and built live - lives on the [homepage](/).*
 
 ---
 
@@ -26,6 +19,22 @@ permalink: /swe/
 - Implemented AI-powered features for content creation and personalization, enabling public figures and sales professionals to create high-converting posts and messages.
 
 **Web Developer**, Synergy Network International - *Mar 2021 – Jan 2022*
+
+## Projects
+
+**Farmceries** - React Native, TypeScript, Express.js, Redis, NativeWind · *Jan 2024 – 2025*
+
+- Links: [Watch Demo](https://docs.google.com/document/d/1dM9UtTIIHtOlvS8rosEuQvJt0vfIOqXo_u0_yWPiURk/edit)
+- As the sole engineer, led the end-to-end technical development of an award-winning cross-platform mobile e-commerce app addressing socio-economic challenges for farmers, vendors, and consumers.
+- Single-handedly executed the complete product development lifecycle from conceptualization to production-ready state - market research, UI/UX design from sketches, full-stack development, and backend architecture.
+- Built a scalable Node.js/Express.js backend with Redis caching and session management, and developed the React Native frontend with NativeWind styling.
+- Took ownership of product strategy and customer-centric design, resulting in a user-friendly interface that generated significant pre-launch interest and waitlist growth.
+- Wore multiple hats (engineer, designer, product strategist) while collaborating effectively with non-technical team members.
+
+**Fuse - Cloud-Native Platform** - Microservices, AWS, Kubernetes, Terraform, Docker, Ansible, ELK Stack, PagerDuty · *Nov 2024 – Jun 2025* *(contract, private repo)*
+
+- After delivering the web application, architected and implemented a complete, production-grade cloud-native ecosystem on AWS for a multi-service application, automating the entire infrastructure and deployment lifecycle from scratch.
+- Built a CI/CD pipeline with GitHub Actions, featuring dynamic image tagging, automated environment creation/teardown for PRs, semantic versioning, and integrated security scanning.
 
 ## Open source contributions
 
@@ -53,22 +62,6 @@ permalink: /swe/
 - **GitHub Docs**: [Fixed duplicated steps in the Octernships application guide](https://github.com/github/docs/pull/25439).
 - **Apify**: [Fixed a critical destructuring import for EventEmitter in `apify-shared-js`](https://github.com/apify/apify-shared-js/pull/385).
 - **HackSoftware**: [Corrected issues in Django Styleguide and Google OAuth examples](https://github.com/HackSoftware/Django-React-GoogleOauth2-Example/pull/7).
-
-## Projects
-
-**Farmceries** - React Native, TypeScript, Express.js, Redis, NativeWind · *Jan 2024 – 2025*
-
-- Links: [Watch Demo](https://docs.google.com/document/d/1dM9UtTIIHtOlvS8rosEuQvJt0vfIOqXo_u0_yWPiURk/edit)
-- As the sole engineer, led the end-to-end technical development of an award-winning cross-platform mobile e-commerce app addressing socio-economic challenges for farmers, vendors, and consumers.
-- Single-handedly executed the complete product development lifecycle from conceptualization to production-ready state - market research, UI/UX design from sketches, full-stack development, and backend architecture.
-- Built a scalable Node.js/Express.js backend with Redis caching and session management, and developed the React Native frontend with NativeWind styling.
-- Took ownership of product strategy and customer-centric design, resulting in a user-friendly interface that generated significant pre-launch interest and waitlist growth.
-- Wore multiple hats (engineer, designer, product strategist) while collaborating effectively with non-technical team members.
-
-**Fuse - Cloud-Native Platform** - Microservices, AWS, Kubernetes, Terraform, Docker, Ansible, ELK Stack, PagerDuty · *Nov 2024 – Jun 2025* *(contract, private repo)*
-
-- After delivering the web application, architected and implemented a complete, production-grade cloud-native ecosystem on AWS for a multi-service application, automating the entire infrastructure and deployment lifecycle from scratch.
-- Built a CI/CD pipeline with GitHub Actions, featuring dynamic image tagging, automated environment creation/teardown for PRs, semantic versioning, and integrated security scanning.
 
 ## Hackathon achievements
 
