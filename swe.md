@@ -1,37 +1,22 @@
 ---
-title: Home
-permalink: /
+title: Software Engineering
+permalink: /swe/
 ---
 
-# Basit Balogun
+# Software Engineering — Basit Balogun
 
-Software engineer, making myself a noob again on purpose - chip design, verification, firmware, learned live on stream. [A little more on why I'm actually doing this →](/about/)
-
-I basically stream that process and the things I'm building live, and whenever something's actually finished it turns into a [write-up](/blog/) (and hopefully a walkthrough on YouTube as well). [Here's what I'm actually building →](/roadmap/)
+*This page collects my software-only work in one place. What I'm mostly up to recently — chips, firmware, embedded Linux, all of it learned live — lives on the [homepage](/).*
 
 <div class="social-links">
   <a href="mailto:basitbalogun10@gmail.com">Email</a>
   <a href="https://github.com/Basit-Balogun10">GitHub</a>
-  <a href="https://www.twitch.tv/basitbalogun10">Twitch</a>
-  <a href="https://www.youtube.com/@basitbalogun10">YouTube</a>
   <a href="https://linkedin.com/in/basit-balogun">LinkedIn</a>
   <a href="https://x.com/Basit_Balogun10">X</a>
 </div>
 
-<details class="resume-toggle">
-<summary>Here's some highlights about myself <span class="chevron">›</span></summary>
-<div class="resume-content" markdown="1">
-
 ---
 
 ## Professional experience
-
-**Hardware/Firmware Engineering Intern**, ChipMango - *Apr 2026 – Present*
-
-- Independently researched and documented the interface contracts and system architecture for a 5-group, cross-team NFC voter-accreditation ASIC project - without being the assigned architect - becoming the reference every other group implemented against.
-- Designed, implemented, and verified the full data-retrieval & authentication pipeline in SystemVerilog (NFC protocol frontend, flash record-lookup FSM, authentication FSM) end-to-end; built the unit and full-system Verilator testbenches that caught and fixed multiple real hardware bugs, including a probe-index wraparound that could have corrupted unrelated flash memory and a signal-timing bug that had evaded 91 prior passing checks.
-- Built and deployed secure remote-access infrastructure (Headscale/WireGuard, DuckDNS, custom ACLs) for a shared BeagleBone Black lab board, eliminating a single-connection bottleneck for the full intern cohort.
-- Self-directed an embedded-systems curriculum from bare-metal toolchain and clock bring-up through peripheral driver development (GPIO, interrupts/NVIC, timers/PWM, UART, ADC, SPI, I2C) at the register level, implemented in both C and Rust.
 
 **Software Engineering Intern → Software Engineer**, Matt Young Media (MYM) - *Apr 2023 – Feb 2024*
 
@@ -71,13 +56,6 @@ I basically stream that process and the things I'm building live, and whenever s
 
 ## Projects
 
-**Secure UART Peripheral** (AI-HDL 2026) - Verilog, Cocotb, Yosys, OpenLANE · *Jan 2026 – Apr 2026*
-
-- Repository: [github.com/Basit-Balogun10/team-farmceries-AI-HDL-2026](https://github.com/Basit-Balogun10/team-farmceries-AI-HDL-2026/tree/basit-dp-1)
-- Designed and implemented a complete UART serial communication system with 4 configurable baud rates and a memory-mapped register interface for a RISC-V CPU.
-- Integrated an AES-128 hardware encryption engine directly into the datapath, achieving successful synthesis (~98k cells) using Yosys.
-- Developed comprehensive testbenches using Python and Cocotb to verify cryptographic transformations and serial data transmission.
-
 **Farmceries** - React Native, TypeScript, Express.js, Redis, NativeWind · *Jan 2024 – 2025*
 
 - Links: [Watch Demo](https://docs.google.com/document/d/1dM9UtTIIHtOlvS8rosEuQvJt0vfIOqXo_u0_yWPiURk/edit)
@@ -93,11 +71,6 @@ I basically stream that process and the things I'm building live, and whenever s
 - Built a CI/CD pipeline with GitHub Actions, featuring dynamic image tagging, automated environment creation/teardown for PRs, semantic versioning, and integrated security scanning.
 
 ## Hackathon achievements
-
-**Winner - ISQED Agentic AI Design Verification Challenge** *(April 2026)*
-
-- Built a full agentic AI verification pipeline across all four competition phases - custom specialized agents for test generation, coverage-directed stimulus, waveform debugging, and autonomous end-to-end verification - spanning DUTs including AES-128, I2C, HMAC-SHA256, and UART, securing first place.
-- Proof: [LinkedIn post](https://lnkd.in/p/dXHPDn9V)
 
 **2nd Place Winner - GTCO Squad Hackathon 2.0** *(March 2025)*
 
@@ -148,6 +121,3 @@ I basically stream that process and the things I'm building live, and whenever s
 
 **Bachelor of Science, Electrical and Electronics Engineering**
 University of Lagos | 2021 - 2027 (extended one year, nationwide academic strike)
-
-</div>
-</details>
