@@ -30,10 +30,10 @@ I basically stream that process and the things I'm building live, and whenever s
 
 **Embedded systems**
 
-- Built and deployed remote SSH infrastructure giving 10-15 interns concurrent access to a shared BeagleBone Black lab board: self-hosted Headscale control plane (WireGuard VPN) on a small cloud droplet at zero cost, with DuckDNS, Tailscale SSH access policy, and cron automation for key rotation, node cleanup, and backups - eliminating the single-connection serial-console bottleneck.
+- Built and deployed remote SSH infrastructure giving 10-15 interns concurrent access to a shared BeagleBone Black lab board. It runs on a self-hosted Headscale control plane over WireGuard, hosted on a small cloud droplet with DuckDNS addressing and a scoped Tailscale SSH access policy. Key rotation, node cleanup, and backups run as automated cron jobs, replacing the single-connection serial console.
 - Built a complete BeagleBone Black (AM335x) Linux system from source: a crosstool-NG musl cross-toolchain, U-Boot with SPL support, the Linux kernel, and BusyBox/Buildroot root filesystems. Brought the board up with no display or serial console attached, driving U-Boot through scripted boot commands, USB networking, and a dnsmasq DHCP server.
 - Cross-compiled Linux for the BeagleBone Black and booted it over NFS. Wrote checkpatch-clean out-of-tree kernel modules, with parameters and patches. Extended the board device tree with new UART nodes, and implemented a misc character driver handling file operations, ioctl control, and data transfer between user and kernel space.
-- Built custom embedded Linux images with the Yocto Project for the BeagleBone. Wrote a custom layer and recipes (including packaging the nInvaders arcade game), extended upstream recipes, defined a custom machine and image, and iterated on applications using the devtool workflow.
+- Built custom embedded Linux images with the Yocto Project for the BeagleBone. Wrote a custom layer and recipes, extended upstream recipes, defined a custom machine and image, and iterated on applications using the devtool workflow. Packaged the nInvaders arcade game as a recipe, fixing its legacy build failure under a modern toolchain.
 - Brought up bare-metal firmware on STM32F401, from toolchain and clock configuration through register-level peripheral drivers (GPIO, interrupts/NVIC, timers/PWM, UART, ADC, SPI, I2C), implemented in both C and Rust.
 
 **Chip design**
