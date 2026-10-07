@@ -31,9 +31,9 @@ I basically stream that process and the things I'm building live, and whenever s
 **Embedded systems**
 
 - Built and deployed secure remote-access infrastructure (Headscale/WireGuard, DuckDNS, custom ACLs) for a shared BeagleBone Black lab board, eliminating a single-connection bottleneck for the full intern cohort.
-- Built a complete BeagleBone Black (AM335x) Linux system from source: a crosstool-NG musl cross-toolchain, U-Boot with SPL and NetConsole support, the Linux kernel, and BusyBox/Buildroot root filesystems. Brought the board up with no display or serial console attached, driving U-Boot through scripted boot commands, USB networking, and a dnsmasq DHCP server.
+- Built a complete BeagleBone Black (AM335x) Linux system from source: a crosstool-NG musl cross-toolchain, U-Boot with SPL support, the Linux kernel, and BusyBox/Buildroot root filesystems. Brought the board up with no display or serial console attached, driving U-Boot through scripted boot commands, USB networking, and a dnsmasq DHCP server.
 - Cross-compiled Linux for the BeagleBone Black and booted it over NFS. Wrote checkpatch-clean out-of-tree kernel modules, with parameters and patches. Extended the board device tree with new UART nodes, and implemented a misc character driver handling file operations, ioctl control, and data transfer between user and kernel space.
-- Built custom embedded Linux images with the Yocto Project for qemuarm. Wrote a custom layer and recipes, extended upstream recipes, defined a custom machine and image, and iterated on applications using the devtool workflow.
+- Built custom embedded Linux images with the Yocto Project for the BeagleBone. Wrote a custom layer and recipes, extended upstream recipes, defined a custom machine and image, and iterated on applications using the devtool workflow.
 - Brought up bare-metal firmware on STM32F401, from toolchain and clock configuration through register-level peripheral drivers (GPIO, interrupts/NVIC, timers/PWM, UART, ADC, SPI, I2C), implemented in both C and Rust.
 
 **Chip design**
