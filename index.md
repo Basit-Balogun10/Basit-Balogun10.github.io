@@ -34,7 +34,6 @@ I basically stream that process and the things I'm building live, and whenever s
 - Built a complete BeagleBone Black (AM335x) Linux system from source: a crosstool-NG musl cross-toolchain, U-Boot with SPL support, the Linux kernel, and BusyBox/Buildroot root filesystems. Brought the board up with no display or serial console attached, driving U-Boot through scripted boot commands, USB networking, and a dnsmasq DHCP server.
 - Cross-compiled Linux for the BeagleBone Black and booted it over NFS. Wrote checkpatch-clean out-of-tree kernel modules, with parameters and patches. Extended the board device tree with new UART nodes, and implemented a misc character driver handling file operations, ioctl control, and data transfer between user and kernel space.
 - Built custom embedded Linux images with the Yocto Project for the BeagleBone. Wrote a custom layer and recipes, extended upstream recipes, defined a custom machine and image, and iterated on applications using the devtool workflow. Packaged the nInvaders arcade game as a recipe and fixed its legacy build failure under a modern toolchain.
-- Brought up bare-metal firmware on STM32F401, from toolchain and clock configuration through register-level peripheral drivers (GPIO, interrupts/NVIC, timers/PWM, UART, ADC, SPI, I2C), implemented in both C and Rust.
 
 **Chip design**
 
