@@ -26,12 +26,17 @@ I basically stream that process and the things I'm building live, and whenever s
 
 ## Professional experience
 
-**Hardware/Firmware Engineering Intern**, ChipMango - *Apr 2026 – Present*
+**Digital Design & Embedded Systems Intern**, ChipMango - *Apr 2026 – Sep 2026*
 
-- Independently researched and documented the interface contracts and system architecture for a 5-group, cross-team NFC voter-accreditation ASIC project - without being the assigned architect - becoming the reference every other group implemented against.
-- Designed, implemented, and verified the full data-retrieval & authentication pipeline in SystemVerilog (NFC protocol frontend, flash record-lookup FSM, authentication FSM) end-to-end; built the unit and full-system Verilator testbenches.
+**Embedded systems**
 - Built and deployed secure remote-access infrastructure (Headscale/WireGuard, DuckDNS, custom ACLs) for a shared BeagleBone Black lab board, eliminating a single-connection bottleneck for the full intern cohort.
-- Self-directed an embedded-systems curriculum from bare-metal toolchain and clock bring-up through peripheral driver development (GPIO, interrupts/NVIC, timers/PWM, UART, ADC, SPI, I2C) at the register level, implemented in both C and Rust.
+- Built a complete BeagleBone Black (AM335x) Linux system from source: crosstool-NG musl cross-toolchain, U-Boot v2024.04 (SPL + FIT image, NetConsole), Linux 6.6, and BusyBox/Buildroot root filesystems over NFS and SD card; drove headless board bring-up with uEnv boot scripting, USB RNDIS networking, and dnsmasq DHCP/TFTP.
+- Cross-compiled and NFS-booted Linux on BeagleBone Black; wrote checkpatch-clean out-of-tree kernel modules (parameters, patches), extended the board device tree with new UART nodes, and implemented a misc character driver (file_operations, ioctl, user/kernel-space transfer).
+- Built custom embedded Linux images with the Yocto Project (qemuarm): authored a custom layer and recipes, extended upstream recipes, defined a custom machine and image, and iterated on userspace applications with the devtool workflow.
+- Brought up bare-metal firmware on STM32F401, from toolchain and clock configuration through register-level peripheral drivers (GPIO, interrupts/NVIC, timers/PWM, UART, ADC, SPI, I2C), implemented in both C and Rust.
+**Chip design**
+- Independently researched and documented the interface contracts and system architecture for a 5-group, cross-team NFC voter-accreditation ASIC project - stepping in as de-facto system architect - becoming the reference every other group implemented against.
+- Designed, implemented, and verified that ASIC's full data-retrieval & authentication pipeline in SystemVerilog (NFC protocol frontend, flash record-lookup FSM, authentication FSM) end-to-end; built the unit and full-system Verilator testbenches.
 
 **Software Engineering Intern → Software Engineer**, Matt Young Media (MYM) - *Apr 2023 – Feb 2024*
 
