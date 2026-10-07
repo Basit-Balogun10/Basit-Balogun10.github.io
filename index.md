@@ -26,26 +26,29 @@ I basically stream that process and the things I'm building live, and whenever s
 
 ## Professional experience
 
-**Digital Design & Embedded Systems Intern**, ChipMango - *Apr 2026 – Sep 2026*
+**Digital Design & Embedded Systems Intern**, ChipMango - *Apr 2026 - Sep 2026*
 
 **Embedded systems**
+
 - Built and deployed secure remote-access infrastructure (Headscale/WireGuard, DuckDNS, custom ACLs) for a shared BeagleBone Black lab board, eliminating a single-connection bottleneck for the full intern cohort.
-- Built a complete BeagleBone Black (AM335x) Linux system from source: crosstool-NG musl cross-toolchain, U-Boot v2024.04 (SPL + FIT image, NetConsole), Linux 6.6, and BusyBox/Buildroot root filesystems over NFS and SD card; drove headless board bring-up with uEnv boot scripting, USB RNDIS networking, and dnsmasq DHCP/TFTP.
-- Cross-compiled and NFS-booted Linux on BeagleBone Black; wrote checkpatch-clean out-of-tree kernel modules (parameters, patches), extended the board device tree with new UART nodes, and implemented a misc character driver (file_operations, ioctl, user/kernel-space transfer).
-- Built custom embedded Linux images with the Yocto Project (qemuarm): authored a custom layer and recipes, extended upstream recipes, defined a custom machine and image, and iterated on userspace applications with the devtool workflow.
+- Built a complete BeagleBone Black (AM335x) Linux system from source: a crosstool-NG musl cross-toolchain, U-Boot with SPL and NetConsole support, the Linux kernel, and BusyBox/Buildroot root filesystems. Brought the board up with no display or serial console attached, driving U-Boot through scripted boot commands, USB networking, and a dnsmasq DHCP server.
+- Cross-compiled Linux for the BeagleBone Black and booted it over NFS. Wrote checkpatch-clean out-of-tree kernel modules, with parameters and patches. Extended the board device tree with new UART nodes, and implemented a misc character driver handling file operations, ioctl control, and data transfer between user and kernel space.
+- Built custom embedded Linux images with the Yocto Project for qemuarm. Wrote a custom layer and recipes, extended upstream recipes, defined a custom machine and image, and iterated on applications using the devtool workflow.
 - Brought up bare-metal firmware on STM32F401, from toolchain and clock configuration through register-level peripheral drivers (GPIO, interrupts/NVIC, timers/PWM, UART, ADC, SPI, I2C), implemented in both C and Rust.
+
 **Chip design**
-- Independently researched and documented the interface contracts and system architecture for a 5-group, cross-team NFC voter-accreditation ASIC project - stepping in as de-facto system architect - becoming the reference every other group implemented against.
+
+- Independently researched and documented the interface contracts and system architecture for a 5-group, cross-team NFC voter-accreditation ASIC project, stepping in as de-facto system architect, becoming the reference every other group implemented against.
 - Designed, implemented, and verified that ASIC's full data-retrieval & authentication pipeline in SystemVerilog (NFC protocol frontend, flash record-lookup FSM, authentication FSM) end-to-end; built the unit and full-system Verilator testbenches.
 
-**Software Engineering Intern → Software Engineer**, Matt Young Media (MYM) - *Apr 2023 – Feb 2024*
+**Software Engineering Intern → Software Engineer**, Matt Young Media (MYM) - *Apr 2023 - Feb 2024*
 
 - Developed and shipped key features and bug fixes for a leads generation tool, reducing pre-launch crashes by over 20%.
 - Was instrumental in transitioning a large frontend codebase from JavaScript to TypeScript, significantly boosting code reliability and maintainability.
 - Deep integration with LinkedIn APIs on the backend to extract user data, automate connection requests, and analyze engagement patterns for lead generation and content optimization.
 - Implemented AI-powered features for content creation and personalization, enabling public figures and sales professionals to create high-converting posts and messages.
 
-**Web Developer**, Synergy Network International - *Mar 2021 – Jan 2022*
+**Web Developer**, Synergy Network International - *Mar 2021 - Jan 2022*
 
 ## Open source contributions
 
@@ -76,14 +79,14 @@ I basically stream that process and the things I'm building live, and whenever s
 
 ## Projects
 
-**Secure UART Peripheral** (AI-HDL 2026) - Verilog, Cocotb, Yosys, OpenLANE · *Jan 2026 – Apr 2026*
+**Secure UART Peripheral** (AI-HDL 2026) - Verilog, Cocotb, Yosys, OpenLANE · *Jan 2026 - Apr 2026*
 
 - Repository: [github.com/Basit-Balogun10/team-farmceries-AI-HDL-2026](https://github.com/Basit-Balogun10/team-farmceries-AI-HDL-2026/tree/basit-dp-1)
 - Designed and implemented a complete UART serial communication system with 4 configurable baud rates and a memory-mapped register interface for a RISC-V CPU.
 - Integrated an AES-128 hardware encryption engine directly into the datapath, achieving successful synthesis (~98k cells) using Yosys.
 - Developed comprehensive testbenches using Python and Cocotb to verify cryptographic transformations and serial data transmission.
 
-**Farmceries** - React Native, TypeScript, Express.js, Redis, NativeWind · *Jan 2024 – 2025*
+**Farmceries** - React Native, TypeScript, Express.js, Redis, NativeWind · *Jan 2024 - 2025*
 
 - Links: [Watch Demo](https://docs.google.com/document/d/1dM9UtTIIHtOlvS8rosEuQvJt0vfIOqXo_u0_yWPiURk/edit)
 - As the sole engineer, led the end-to-end technical development of an award-winning cross-platform mobile e-commerce app addressing socio-economic challenges for farmers, vendors, and consumers.
@@ -92,7 +95,7 @@ I basically stream that process and the things I'm building live, and whenever s
 - Took ownership of product strategy and customer-centric design, resulting in a user-friendly interface that generated significant pre-launch interest and waitlist growth.
 - Wore multiple hats (engineer, designer, product strategist) while collaborating effectively with non-technical team members.
 
-**Fuse - Cloud-Native Platform** - Microservices, AWS, Kubernetes, Terraform, Docker, Ansible, ELK Stack, PagerDuty · *Nov 2024 – Jun 2025* *(contract, private repo)*
+**Fuse - Cloud-Native Platform** - Microservices, AWS, Kubernetes, Terraform, Docker, Ansible, ELK Stack, PagerDuty · *Nov 2024 - Jun 2025* *(contract, private repo)*
 
 - After delivering the web application, architected and implemented a complete, production-grade cloud-native ecosystem on AWS for a multi-service application, automating the entire infrastructure and deployment lifecycle from scratch.
 - Built a CI/CD pipeline with GitHub Actions, featuring dynamic image tagging, automated environment creation/teardown for PRs, semantic versioning, and integrated security scanning.
