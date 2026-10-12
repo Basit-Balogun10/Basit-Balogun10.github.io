@@ -82,7 +82,7 @@ I basically stream that process and the things I'm building live, and whenever s
 
 - Repository: [github.com/Basit-Balogun10/team-farmceries-AI-HDL-2026](https://github.com/Basit-Balogun10/team-farmceries-AI-HDL-2026/tree/basit-dp-1)
 - Designed and implemented a complete UART serial communication system with 4 configurable baud rates and a memory-mapped register interface for a RISC-V CPU.
-- Integrated an AES-128 hardware encryption engine directly into the datapath, achieving successful synthesis (~98k cells) using Yosys.
+- Integrated an AES-128 hardware encryption engine directly into the datapath.
 - Developed comprehensive testbenches using Python and Cocotb to verify cryptographic transformations and serial data transmission.
 
 **Farmceries** - React Native, TypeScript, Express.js, Redis, NativeWind · *Jan 2024 - 2025*
