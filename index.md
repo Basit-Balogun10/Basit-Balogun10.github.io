@@ -38,7 +38,7 @@ I basically stream that process and the things I'm building live, and whenever s
 **Chip design**
 
 - Independently researched and documented the interface contracts and system architecture for a 5-group, cross-team NFC voter-accreditation ASIC project, stepping in as de-facto system architect, becoming the reference every other group implemented against.
-- Designed, implemented, and verified that ASIC's full data-retrieval & authentication pipeline in SystemVerilog (NFC protocol frontend, flash record-lookup FSM, authentication FSM) end-to-end; built the unit and full-system Verilator testbenches.
+- Designed, implemented, and verified that ASIC's full data-retrieval & authentication pipeline in SystemVerilog (NFC protocol frontend, flash record-lookup, authentication) end-to-end; built the unit and full-system Verilator testbenches.
 
 **Software Engineering Intern → Software Engineer**, Matt Young Media (MYM) - *Apr 2023 - Feb 2024*
 
